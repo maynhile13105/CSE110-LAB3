@@ -86,7 +86,7 @@ export const StickyNotes = () => {
         <form className="note-form" onSubmit={createNoteHandler}>
           <div>
             <input
-              placeholder="Note title"
+              placeholder="Note Title"
               onChange={(event) =>
                 setCreateNote({ ...createNote, title: event.target.value })
               }
