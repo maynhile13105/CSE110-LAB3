@@ -131,7 +131,8 @@ export const StickyNotes = () => {
       
       
       <div className="notes-grid">
-        {notes.map((note) => (
+        {notes.length === 0? <h1>There is no note!</h1>: 
+        (notes.map((note) => (
           <div key={note.id} className="note-item">
             <div className="note-header">
               <ClickHeart note={note} />
@@ -167,7 +168,7 @@ export const StickyNotes = () => {
             </select>    
             
           </div>
-        ))}
+        )))}
       </div>
       
       <div className="favList">

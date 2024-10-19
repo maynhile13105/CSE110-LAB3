@@ -78,6 +78,17 @@ describe("StickyNote", () => {
         expect(screen.queryByTestId(`title-${deletedNote.id}`)).not.toBeInTheDocument();
         expect(screen.queryByTestId(`content-${deletedNote.id}`)).not.toBeInTheDocument();
     });
+
+    test("No note", () => {
+        render(<StickyNotes />);
+        //Delete all notes in the list
+        dummyNotesList.forEach((note) => {
+            const xButton = screen.getByTestId(`x-${note.id}`);
+            fireEvent.click(xButton);
+        })
+
+        expect(screen.getByText("There is no note!")).toBeInTheDocument();
+    })
     
 })
 

@@ -4,7 +4,8 @@ Sticky Notes:
     - Update test:
         Case 1: Update note[0]'s title. The new title is on display and the old title is deleted (even it is in the favorite list)
         Case 2: Update note[1]'s content. The new content is on display.
-    - Delete test: Test that the deleted note is not in display anymore.
+    - Delete test: Test that the deleted note is not on display anymore.
+    - No note test: Test if there is no note in the list, "There is no note!" is displayed on the page 
 
 To Do List:
     - Read test: Test that all items in the dummyGroceryList are displayed on the page
