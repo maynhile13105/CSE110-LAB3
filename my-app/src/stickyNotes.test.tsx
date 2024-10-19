@@ -62,7 +62,7 @@ describe("StickyNote", () => {
 
         expect(updatingNoteTitle.innerHTML).toBe(updatedTitle);
         expect(updatingNoteContent.innerHTML).toBe(updatedContent);
-        //Check that if the note is in the favorite list, it will be also changed
+        //Check that if the note is in the favorite list, it will also be changed
         expect(screen.queryByText(dummyNotesList[0].title)).not.toBeInTheDocument();
     });
     

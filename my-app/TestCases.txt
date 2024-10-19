@@ -1,0 +1,15 @@
+Sticky Notes:
+    - Create test: Test that a new note is created and it is displayed on the page
+    - Read test: Test that all notes in dummyNotesList are displayed on the page
+    - Update test:
+        Case 1: Update note[0]'s title. The new title is on display and the old title is deleted (even it is in the favorite list)
+        Case 2: Update note[1]'s content. The new content is on display.
+    - Delete test: 
+
+To Do List:
+    - Read test: Test that all items in the dummyGroceryList are displayed on the page
+    - Number of checked items test:
+        Case 1: There is no checked items
+        Case 2: There is 1 checked items
+        Case 3: There is 2 checked items
+     
