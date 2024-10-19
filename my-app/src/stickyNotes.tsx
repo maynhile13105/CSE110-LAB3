@@ -175,7 +175,7 @@ export const StickyNotes = () => {
         <label>List of favorites:</label>
         <ul>
           {favNotesList.map(note => (
-            <li key={note.id}>{note.title}</li>
+            <li data-testid={`fav-${note.id}`} key={note.id}>{note.title}</li>
           ))}
         </ul>
       </div>

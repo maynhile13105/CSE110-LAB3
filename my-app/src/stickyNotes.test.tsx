@@ -27,7 +27,7 @@ describe("StickyNote", () => {
         expect(newNotecontent).toBeInTheDocument();
     });
     
-    test("read note", () => {
+    test("read notes", () => {
         render(<StickyNotes/>);
         //Test that all notes in dummyNoteList are read
         dummyNotesList.forEach((testingNote)=>{
@@ -40,19 +40,19 @@ describe("StickyNote", () => {
     });
 
     
-    test("update note", () => {
+    test("update a note", () => {
         render(<StickyNotes/>);
         const updatedTitle = "Updated Note Title";
         const updatedContent = "Updated Note Content";
-
+        
         //update title of note[0]
         const updatingNoteTitle = screen.getByTestId(`title-${dummyNotesList[0].id}`);
         fireEvent.focus(updatingNoteTitle);
         fireEvent.input(updatingNoteTitle, {target: {innerHTML: updatedTitle}});
         fireEvent.blur(updatingNoteTitle);
         
-        //update content of note[1]
-        const updatingNoteContent = screen.getByTestId(`content-${dummyNotesList[1].id}`);
+        //update content of note[0]
+        const updatingNoteContent = screen.getByTestId(`content-${dummyNotesList[0].id}`);
         fireEvent.focus(updatingNoteContent);
         fireEvent.input(updatingNoteContent, {target: {innerHTML: updatedContent}});
         fireEvent.blur(updatingNoteContent);
@@ -60,10 +60,10 @@ describe("StickyNote", () => {
         expect(updatingNoteTitle.innerHTML).toBe(updatedTitle);
         expect(updatingNoteContent.innerHTML).toBe(updatedContent);
         //Check that if the note is in the favorite list, it will also be changed
-        expect(screen.queryByText(dummyNotesList[0].title)).not.toBeInTheDocument();
+        expect(screen.queryByTestId(dummyNotesList[0].title)).not.toBeInTheDocument();
     });
     
-    test("delete note",()=>{
+    test("delete a note",()=>{
         const deletedNote = dummyNotesList[5];
         render(<StickyNotes />);
 
@@ -77,6 +77,7 @@ describe("StickyNote", () => {
 
         expect(screen.queryByTestId(`title-${deletedNote.id}`)).not.toBeInTheDocument();
         expect(screen.queryByTestId(`content-${deletedNote.id}`)).not.toBeInTheDocument();
+        expect(screen.queryByTestId(`fav-${deletedNote.id}`)).not.toBeInTheDocument();
     });
 
     test("No note", () => {
