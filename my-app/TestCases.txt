@@ -1,16 +1,15 @@
-Sticky Notes:
-    - Create test: Test that a new note is created and it is displayed on the page
-    - Read test: Test that all notes in dummyNotesList are displayed on the page
-    - Update test:
-        Case 1: Update note[0]'s title. The new title is on display and the old title is deleted (even it is in the favorite list)
-        Case 2: Update note[1]'s content. The new content is on display.
-    - Delete test: Test that the deleted note is not on display anymore.
-    - No note test: Test if there is no note in the list, "There is no note!" is displayed on the page 
+StickyNote:
+    - renders create note form: Test whether there is a “create note” button
+    - creates a new note: Test whether a new note is created and displayed on the page
+    - read notes: Test whether all initial notes from dummyNotesList are displayed on the page
+    - update a note: Test whether a note’s title and content can be changed and displayed on the page. Also, test if the old title is removed from the favorite note list and the new title is added to the favorite list. 
+    - delete a note: Test whether a note is removed from the page
+    - No note: Test that the page displays “There is no note!” when the note list is empty.
 
-To Do List:
-    - Read test: Test that all items in the dummyGroceryList are displayed on the page
-    - Number of checked items test:
-        Case 1: There is no checked items
-        Case 2: There is 1 checked items
-        Case 3: There is 2 checked items
-     
+ToDoList:
+    - read items list: Test whether all items in the dummyGroceryList are displayed on the page
+    - number of checked items: Test whether the number of checked items is changed whenever an item is checked/unchecked. We have 4 cases:
+        - There is no item checked.
+        - 1 item is checked.
+        - 2 items are checked.
+        - Unchecked 1 checked item.
