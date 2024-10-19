@@ -57,9 +57,6 @@ describe("StickyNote", () => {
         fireEvent.input(updatingNoteContent, {target: {innerHTML: updatedContent}});
         fireEvent.blur(updatingNoteContent);
 
-        //const updatedNoteTitle = screen.getByTestId(`title-${dummyNotesList[0].id}`);
-        //const updatedNoteContent = screen.getByTestId(`content-${dummyNotesList[1].id}`);
-
         expect(updatingNoteTitle.innerHTML).toBe(updatedTitle);
         expect(updatingNoteContent.innerHTML).toBe(updatedContent);
         //Check that if the note is in the favorite list, it will also be changed
