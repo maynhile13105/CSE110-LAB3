@@ -135,15 +135,17 @@ export const StickyNotes = () => {
           <div key={note.id} className="note-item">
             <div className="note-header">
               <ClickHeart note={note} />
-              <button id="close-button" onClick={()=>deleteNoteHandler(note)}>x</button>
+              <button data-testid={`x-${note.id}`} id="close-button" onClick={()=>deleteNoteHandler(note)}>x</button>
             </div>
             <h2 contentEditable="true"
+                data-testid={`title-${note.id}`}
                 onBlur={(event)=>editNoteHandler({
                   ...note,
                   title: event.currentTarget.textContent || ""})}>
               {note.title}
             </h2>
             <p contentEditable="true"
+              data-testid={`content-${note.id}`}
               onBlur={(event)=>editNoteHandler({
               ...note,
               content: event.currentTarget.textContent || ""})}>
@@ -151,6 +153,7 @@ export const StickyNotes = () => {
             </p>
             <select
             value={note.label}
+            data-testid={`label-${note.id}`}
             onChange={(event) =>
               editNoteHandler({
                 ...note,
