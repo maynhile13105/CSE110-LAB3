@@ -44,7 +44,8 @@ describe("StickyNote", () => {
         render(<StickyNotes/>);
         const updatedTitle = "Updated Note Title";
         const updatedContent = "Updated Note Content";
-        
+        //Assume this note is in favorite list
+        fireEvent.click(screen.getByTestId(`heart-${dummyNotesList[0].id}`));
         //update title of note[0]
         const updatingNoteTitle = screen.getByTestId(`title-${dummyNotesList[0].id}`);
         fireEvent.focus(updatingNoteTitle);
@@ -61,6 +62,7 @@ describe("StickyNote", () => {
         expect(updatingNoteContent.innerHTML).toBe(updatedContent);
         //Check that if the note is in the favorite list, it will also be changed
         expect(screen.queryByTestId(dummyNotesList[0].title)).not.toBeInTheDocument();
+        expect(screen.getAllByText(updatedTitle).length).toBe(2);
     });
     
     test("delete a note",()=>{

@@ -35,6 +35,7 @@ export const StickyNotes = () => {
 
     return (
       <button
+        data-testid={`heart-${note.id}`}
         id="heart"
         onClick={heartClick}
         style={{ color: isFav ? 'red' : 'black' }}
